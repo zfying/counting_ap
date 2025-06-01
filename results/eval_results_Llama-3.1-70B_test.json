@@ -1,0 +1,1326 @@
+{
+  "model_name": "Llama-3.1-70B",
+  "dataset_split": "test",
+  "accuracy": 0.675,
+  "correct": 135,
+  "total": 200,
+  "avg_response_time": 4.309748070580619,
+  "errors_by_count": {
+    "1": {
+      "total": 6,
+      "predictions": [
+        0,
+        2,
+        2,
+        0,
+        2,
+        2
+      ]
+    },
+    "4": {
+      "total": 15,
+      "predictions": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    "5": {
+      "total": 15,
+      "predictions": [
+        3,
+        4,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        3,
+        4
+      ]
+    },
+    "2": {
+      "total": 10,
+      "predictions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        3,
+        1,
+        1
+      ]
+    },
+    "3": {
+      "total": 12,
+      "predictions": [
+        2,
+        2,
+        2,
+        2,
+        5,
+        4,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "6": {
+      "total": 4,
+      "predictions": [
+        5,
+        5,
+        4,
+        5
+      ]
+    },
+    "0": {
+      "total": 3,
+      "predictions": [
+        2,
+        2,
+        1
+      ]
+    }
+  },
+  "errors_by_category": {
+    "body part": 22,
+    "color": 15,
+    "animal": 13,
+    "clothing": 15
+  },
+  "error_analysis": {
+    "total_errors": 65,
+    "invalid_responses": 0,
+    "avg_true_count": 3.4,
+    "avg_predicted_count": 2.6769230769230767,
+    "underestimation_rate": 0.8307692307692308,
+    "overestimation_rate": 0.16923076923076924
+  },
+  "predictions": [
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "clothing",
+      "response": "2\n\nType: clothing"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "clothing",
+      "response": "3)\n\nType: clothing"
+    },
+    {
+      "true": 0,
+      "predicted": 0,
+      "category": "body part",
+      "response": "0\n\nType: body"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "body part",
+      "response": "1)\n\nType: body"
+    },
+    {
+      "true": 4,
+      "predicted": 4,
+      "category": "body part",
+      "response": "4\n"
+    },
+    {
+      "true": 5,
+      "predicted": 5,
+      "category": "body part",
+      "response": "5)\n\nType: body"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2\n\nType: body"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "body part",
+      "response": "3)\n\nType: body"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2\n"
+    },
+    {
+      "true": 1,
+      "predicted": 0,
+      "category": "body part",
+      "response": "0)\n\nType: body"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "clothing",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "clothing",
+      "response": "3)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "animal",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "animal",
+      "response": "3)\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "color",
+      "response": "3\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "color",
+      "response": "2)\n\nType: color"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "body part",
+      "response": "1\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2)\n"
+    },
+    {
+      "true": 4,
+      "predicted": 3,
+      "category": "body part",
+      "response": "3\n"
+    },
+    {
+      "true": 5,
+      "predicted": 3,
+      "category": "body part",
+      "response": "3)\n"
+    },
+    {
+      "true": 4,
+      "predicted": 4,
+      "category": "color",
+      "response": "4\n"
+    },
+    {
+      "true": 5,
+      "predicted": 4,
+      "category": "color",
+      "response": "4)\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "animal",
+      "response": "3\n\nType: animal"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "animal",
+      "response": "2)\n\nType: animal"
+    },
+    {
+      "true": 4,
+      "predicted": 4,
+      "category": "color",
+      "response": "4\n"
+    },
+    {
+      "true": 5,
+      "predicted": 3,
+      "category": "color",
+      "response": "3)\n"
+    },
+    {
+      "true": 0,
+      "predicted": 0,
+      "category": "clothing",
+      "response": "0\n\nType: clothing"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "clothing",
+      "response": "1)\n\nType: clothing"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "body part",
+      "response": "3\n"
+    },
+    {
+      "true": 2,
+      "predicted": 1,
+      "category": "body part",
+      "response": "1)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "clothing",
+      "response": "2\n\nType: clothing"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "clothing",
+      "response": "3)\n\nType: clothing"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "animal",
+      "response": "1\n\nType: animal"
+    },
+    {
+      "true": 2,
+      "predicted": 1,
+      "category": "animal",
+      "response": "1)\n\nType: animal"
+    },
+    {
+      "true": 3,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2)\n"
+    },
+    {
+      "true": 4,
+      "predicted": 3,
+      "category": "clothing",
+      "response": "3\n"
+    },
+    {
+      "true": 3,
+      "predicted": 2,
+      "category": "clothing",
+      "response": "2)\n"
+    },
+    {
+      "true": 4,
+      "predicted": 3,
+      "category": "clothing",
+      "response": "3\n"
+    },
+    {
+      "true": 5,
+      "predicted": 4,
+      "category": "clothing",
+      "response": "4)\n"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "clothing",
+      "response": "1\n\nType: clothing"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "clothing",
+      "response": "2)\n\nType: clothing"
+    },
+    {
+      "true": 4,
+      "predicted": 4,
+      "category": "color",
+      "response": "4\n\nType: color"
+    },
+    {
+      "true": 3,
+      "predicted": 2,
+      "category": "color",
+      "response": "2)\n\nType: color"
+    },
+    {
+      "true": 5,
+      "predicted": 5,
+      "category": "clothing",
+      "response": "5\n"
+    },
+    {
+      "true": 6,
+      "predicted": 5,
+      "category": "clothing",
+      "response": "5)\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "color",
+      "response": "3\n\nType: color"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "color",
+      "response": "2)\n\nType: color"
+    },
+    {
+      "true": 4,
+      "predicted": 4,
+      "category": "clothing",
+      "response": "4\n"
+    },
+    {
+      "true": 5,
+      "predicted": 4,
+      "category": "clothing",
+      "response": "4)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "animal",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "animal",
+      "response": "3)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "color",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "color",
+      "response": "3)\n"
+    },
+    {
+      "true": 5,
+      "predicted": 4,
+      "category": "animal",
+      "response": "4\n\nType: animal"
+    },
+    {
+      "true": 4,
+      "predicted": 3,
+      "category": "animal",
+      "response": "3)\n\nType: animal"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "clothing",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "clothing",
+      "response": "3)\n"
+    },
+    {
+      "true": 4,
+      "predicted": 4,
+      "category": "animal",
+      "response": "4\n"
+    },
+    {
+      "true": 5,
+      "predicted": 4,
+      "category": "animal",
+      "response": "4)\n"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "color",
+      "response": "1\n\nType: color"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "color",
+      "response": "2)\n\nType: color"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "body part",
+      "response": "1\n"
+    },
+    {
+      "true": 2,
+      "predicted": 1,
+      "category": "body part",
+      "response": "1)\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "body part",
+      "response": "3\n"
+    },
+    {
+      "true": 2,
+      "predicted": 1,
+      "category": "body part",
+      "response": "1)\n"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "body part",
+      "response": "1\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2)\n"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "clothing",
+      "response": "1\n\nType: clothing"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "clothing",
+      "response": "2)\n\nType: clothing"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "body part",
+      "response": "1\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "animal",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "animal",
+      "response": "3)\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "clothing",
+      "response": "3\n\nType: clothing"
+    },
+    {
+      "true": 2,
+      "predicted": 1,
+      "category": "clothing",
+      "response": "1)\n\nType: clothing"
+    },
+    {
+      "true": 2,
+      "predicted": 1,
+      "category": "animal",
+      "response": "1\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "animal",
+      "response": "3)\n"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "clothing",
+      "response": "1\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "clothing",
+      "response": "2)\n"
+    },
+    {
+      "true": 4,
+      "predicted": 3,
+      "category": "clothing",
+      "response": "3\n"
+    },
+    {
+      "true": 5,
+      "predicted": 4,
+      "category": "clothing",
+      "response": "4)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "body part",
+      "response": "3)\n"
+    },
+    {
+      "true": 4,
+      "predicted": 3,
+      "category": "body part",
+      "response": "3\n"
+    },
+    {
+      "true": 5,
+      "predicted": 4,
+      "category": "body part",
+      "response": "4)\n"
+    },
+    {
+      "true": 4,
+      "predicted": 4,
+      "category": "color",
+      "response": "4\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "color",
+      "response": "3)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2\n"
+    },
+    {
+      "true": 1,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2)\n"
+    },
+    {
+      "true": 4,
+      "predicted": 4,
+      "category": "color",
+      "response": "4\n\nType: color"
+    },
+    {
+      "true": 3,
+      "predicted": 2,
+      "category": "color",
+      "response": "2)\n\nType: color"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "color",
+      "response": "1\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "color",
+      "response": "2)\n"
+    },
+    {
+      "true": 3,
+      "predicted": 5,
+      "category": "color",
+      "response": "5\n"
+    },
+    {
+      "true": 4,
+      "predicted": 4,
+      "category": "color",
+      "response": "4)\n"
+    },
+    {
+      "true": 3,
+      "predicted": 4,
+      "category": "color",
+      "response": "4\n"
+    },
+    {
+      "true": 4,
+      "predicted": 4,
+      "category": "color",
+      "response": "4)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 3,
+      "category": "animal",
+      "response": "3\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "animal",
+      "response": "3)\n"
+    },
+    {
+      "true": 1,
+      "predicted": 2,
+      "category": "animal",
+      "response": "2\n"
+    },
+    {
+      "true": 2,
+      "predicted": 3,
+      "category": "animal",
+      "response": "3)\n"
+    },
+    {
+      "true": 0,
+      "predicted": 0,
+      "category": "clothing",
+      "response": "0\n\nType: clothing"
+    },
+    {
+      "true": 1,
+      "predicted": 0,
+      "category": "clothing",
+      "response": "0)\n\nType: clothing"
+    },
+    {
+      "true": 1,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2\n"
+    },
+    {
+      "true": 0,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2)\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "clothing",
+      "response": "3\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "clothing",
+      "response": "2)\n"
+    },
+    {
+      "true": 4,
+      "predicted": 4,
+      "category": "color",
+      "response": "4\n"
+    },
+    {
+      "true": 5,
+      "predicted": 4,
+      "category": "color",
+      "response": "4)\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "body part",
+      "response": "3\n"
+    },
+    {
+      "true": 4,
+      "predicted": 3,
+      "category": "body part",
+      "response": "3)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2\n"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "body part",
+      "response": "1)\n"
+    },
+    {
+      "true": 0,
+      "predicted": 0,
+      "category": "animal",
+      "response": "0\n\nType: animal"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "animal",
+      "response": "1)\n\nType: animal"
+    },
+    {
+      "true": 5,
+      "predicted": 3,
+      "category": "color",
+      "response": "3\n"
+    },
+    {
+      "true": 4,
+      "predicted": 2,
+      "category": "color",
+      "response": "2)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "animal",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "animal",
+      "response": "3)\n"
+    },
+    {
+      "true": 4,
+      "predicted": 3,
+      "category": "animal",
+      "response": "3\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "animal",
+      "response": "3)\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "clothing",
+      "response": "3\n"
+    },
+    {
+      "true": 4,
+      "predicted": 4,
+      "category": "clothing",
+      "response": "4)\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "color",
+      "response": "3\n\nType: color"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "color",
+      "response": "2)\n\nType: color"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "body part",
+      "response": "3)\n"
+    },
+    {
+      "true": 4,
+      "predicted": 3,
+      "category": "animal",
+      "response": "3\n\nType: animal"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "animal",
+      "response": "3)\n\nType: animal"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "clothing",
+      "response": "1\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "clothing",
+      "response": "2)\n\nType: clothing"
+    },
+    {
+      "true": 5,
+      "predicted": 5,
+      "category": "clothing",
+      "response": "5\n"
+    },
+    {
+      "true": 4,
+      "predicted": 3,
+      "category": "clothing",
+      "response": "3)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "body part",
+      "response": "3)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "body part",
+      "response": "3)\n"
+    },
+    {
+      "true": 4,
+      "predicted": 3,
+      "category": "animal",
+      "response": "3\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "animal",
+      "response": "3)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "color",
+      "response": "2\n\nType: color"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "color",
+      "response": "1)\n\nType: color"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "body part",
+      "response": "3)\n"
+    },
+    {
+      "true": 0,
+      "predicted": 0,
+      "category": "body part",
+      "response": "0\n\nType: body"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "body part",
+      "response": "1)\n"
+    },
+    {
+      "true": 4,
+      "predicted": 3,
+      "category": "color",
+      "response": "3\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "color",
+      "response": "3)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "color",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 2,
+      "category": "color",
+      "response": "2)\n"
+    },
+    {
+      "true": 5,
+      "predicted": 4,
+      "category": "body part",
+      "response": "4\n"
+    },
+    {
+      "true": 6,
+      "predicted": 5,
+      "category": "body part",
+      "response": "5)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "color",
+      "response": "2\n\nType: color"
+    },
+    {
+      "true": 3,
+      "predicted": 1,
+      "category": "color",
+      "response": "1)\n\nType: color"
+    },
+    {
+      "true": 0,
+      "predicted": 0,
+      "category": "body part",
+      "response": "0\n\nType: body"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "body part",
+      "response": "1)\n\nType: body"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "color",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 2,
+      "category": "color",
+      "response": "2)\n\nType: color"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "clothing",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 2,
+      "category": "clothing",
+      "response": "2)\n"
+    },
+    {
+      "true": 0,
+      "predicted": 0,
+      "category": "body part",
+      "response": "0\n\nType: body"
+    },
+    {
+      "true": 1,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "body part",
+      "response": "3)\n"
+    },
+    {
+      "true": 5,
+      "predicted": 4,
+      "category": "body part",
+      "response": "4\n"
+    },
+    {
+      "true": 6,
+      "predicted": 4,
+      "category": "body part",
+      "response": "4)\n"
+    },
+    {
+      "true": 5,
+      "predicted": 5,
+      "category": "animal",
+      "response": "5\n"
+    },
+    {
+      "true": 6,
+      "predicted": 5,
+      "category": "animal",
+      "response": "5)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "body part",
+      "response": "3)\n\nType: body"
+    },
+    {
+      "true": 4,
+      "predicted": 3,
+      "category": "body part",
+      "response": "3\n"
+    },
+    {
+      "true": 5,
+      "predicted": 3,
+      "category": "body part",
+      "response": "3)\n"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "clothing",
+      "response": "1\n"
+    },
+    {
+      "true": 0,
+      "predicted": 0,
+      "category": "clothing",
+      "response": "0)\n\nType: clothing"
+    },
+    {
+      "true": 0,
+      "predicted": 2,
+      "category": "color",
+      "response": "2\n"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "color",
+      "response": "1)\n\nType: color"
+    },
+    {
+      "true": 4,
+      "predicted": 4,
+      "category": "animal",
+      "response": "4\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "animal",
+      "response": "3)\n\nType: animal"
+    },
+    {
+      "true": 2,
+      "predicted": 1,
+      "category": "body part",
+      "response": "1\n"
+    },
+    {
+      "true": 3,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2)\n"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "animal",
+      "response": "1\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "animal",
+      "response": "2)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "animal",
+      "response": "2\n"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "animal",
+      "response": "1)\n\nType: animal"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "clothing",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "clothing",
+      "response": "3)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "clothing",
+      "response": "2\n"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "clothing",
+      "response": "1)\n"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "body part",
+      "response": "1\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "body part",
+      "response": "2)\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "clothing",
+      "response": "3\n\nType: clothing"
+    },
+    {
+      "true": 2,
+      "predicted": 1,
+      "category": "clothing",
+      "response": "1)\n\nType: clothing"
+    },
+    {
+      "true": 4,
+      "predicted": 3,
+      "category": "clothing",
+      "response": "3\n"
+    },
+    {
+      "true": 5,
+      "predicted": 4,
+      "category": "clothing",
+      "response": "4)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "clothing",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 3,
+      "category": "clothing",
+      "response": "3)\n"
+    },
+    {
+      "true": 0,
+      "predicted": 1,
+      "category": "animal",
+      "response": "1\n"
+    },
+    {
+      "true": 1,
+      "predicted": 1,
+      "category": "animal",
+      "response": "1)\n"
+    },
+    {
+      "true": 2,
+      "predicted": 2,
+      "category": "color",
+      "response": "2\n"
+    },
+    {
+      "true": 3,
+      "predicted": 2,
+      "category": "color",
+      "response": "2)\n\nType: color"
+    }
+  ]
+}

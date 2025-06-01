@@ -49,7 +49,13 @@ List: [{word_list}]
 Answer:
 ```
 ## Model Evalution
-**Tested models**: Llama-3.2-1B-Instruct, Llama-3.1-8B-Instruct, Llama-3.3-70B-Instruct, Qwen2.5-1.5B-Instruct, Qwen2.5-7B-Instruct, Qwen2.5-72B-Instruct.
+**Tested models:**
+- Llama-3.2-1B-Instruct
+- Llama-3.1-8B-Instruct
+- Llama-3.3-70B-Instruct
+- Qwen2.5-1.5B-Instruct
+- Qwen2.5-7B-Instruct
+- Qwen2.5-72B-Instruct.
 
 ![Model Accuracy Comparison](figs/model_accuracy_comparison.png)
 ![Model Accuracy by Categories](figs/accuracy_by_categories.png)
@@ -57,24 +63,24 @@ Answer:
 ![Error Rate by List Length](figs/error_rate_by_list_length.png)
 
 **Takeaways:**
-- Larger models significantly outperform smaller ones (70B >> 8B >> 1B). The accuracies range from ~30% to ~90%.
-- Performance remains relatively consistent across semantic categories.
-- Accuracy doesn't strictly correlate with true count, suggesting models have counting priors.
-- Accuracy decreases with longer lists.
+- Larger models significantly outperform smaller ones (70B >> 8B >> 1B). The accuracies range from ~30% to ~90%. This dramatic scaling effect suggests that counting requires sophisticated internal representation that benefir from increased scale.
+- Performance remains relatively consistent across semantic categories, suggesting that the difficulties across categories in our dataset are consistent and the counting mechanism is likely domain-general.
+- Accuracy doesn't strictly correlate with true count, suggesting models might have some counting priors. Rather than implementing perfect arithmetic, the model appears to have learned distributional biases about likely counts, possibly reflecting training data statistics ([Zhang et al., 2025](https://arxiv.org/abs/2504.12585)). 
+- Error rate increases with longer lists. This increase likely reflects accumulating errors in the incremental updating process and potential limitations in the attention mechanism's ability to effectively route information from distant word positions to the final token.
 
 ## Activation Patching
 
-Following suggests from Zhang & Nanda (2024), we implemented **Symmetric Token Replacement (STR)** experiments. We measure effect of patching with normalized logit differences, for each layer, for each token since the first word of the list, on residual stream, attention layer, and MLP layer. 
+Following suggests from [Zhang & Nanda (2024)](https://arxiv.org/abs/2309.16042), we implemented **Symmetric Token Replacement (STR)** experiments. We measure effect of patching with normalized logit differences, for each layer, for each token since the first word of the list, on residual stream, attention layer, and MLP layer. 
 
 Due to time and compute constraint, we only conduct experiments on Llama-70B with 21 samples and Llama-8B with 300 samples. The 21 samples on Llama-70B are all with list length of 5 and corruption on the 3rd word in the list. 
 
 ### Single Sample Qualitative Results
 We show four representative samples from Llama-70B below:
-Sample A: [word1] [word2] [*CORRUPT*] [distractor] [distractor] |  Sample B: [word1] [word2] [*CORRUPT*] [distractor] [*target*]
+Sample A: [word1] [word2] [*CORRUPT*] [distractor] [distractor] |  Sample B: [word1] [word2] [*CORRUPT*] [distractor] [*TARGET*]
 :-------------------------:|:-------------------------:
 ![Sample A](figs/single_sample_heatmap_vertical_test_001127.png)  |  ![Sample B](figs/single_sample_heatmap_vertical_test_001603.png)
 
-Sample C: [word1] [word2] [*CORRUPT*] [*target*] [distractor] |  Sample D: [word1] [word2] [*CORRUPT*] [*target*] [*target*]
+Sample C: [word1] [word2] [*CORRUPT*] [*TARGET*] [distractor] |  Sample D: [word1] [word2] [*CORRUPT*] [*TARGET*] [*TARGET*]
 :-------------------------:|:-------------------------:
 ![Sample C](figs/single_sample_heatmap_vertical_test_001145.png)  |  ![Sample D](figs/single_sample_heatmap_vertical_test_000129.png)
 
@@ -99,15 +105,15 @@ Averaging effects across 21 samples at Llama-70B reveals patterns consistent wit
 5. **Final token**: Strong late-layer effects 
 
 ![Average Attention](figs/average_attn.png)
-- Concentrated effects in layers 30-35
-- Strong effects at final token position
+- **Final token**: Strong effects in mid layers 30-35
+- Minimal effect at all other locations
 
 ### Discussion
 
-Our results provide evidence supporting a running count hypothesis for how Llama processes counting tasks. The observed pattern strongly suggests that the model maintains an internal count state that is incrementally updated as it processes each word in the list. Specifically, corruption at position 3 disrupts this count state in early-to-mid layers. Crucially, only target words show strong patching effects post-corruption, while distractors show minimal effects, indicating that count updates occur selectively when task-relevant items are encountered. The strong effects at the final token in later layers suggest that the accumulated count information is ultimately routed for next-token prediction. The attention layer effects concentrated in mid-layers (30-35) at the final token position, likely reflecting the mechanism by which count information is aggregated and prepared for output. This pattern is inconsistent with end-of-sequence batch counting and instead supports a sequential updating mechanism where each fruit incrementally modifies an internal count representation that persists through the residual stream.
+Based on these activation patching results, we propose a incremental counting mechanism in Llama-3.3-70B model. The computational flow operates in three phases: (1) **Early-layer classification (layers 0-20)** processes individual words and determines their category (target vs. distractor), evidenced by strong patching effects at the corrupted position across early layers; (2) **Mid-layer incremental counting (layers 20-35)** selectively updates an internal count representation only when processing target words. The model maintains a running count that is conditionally updated based on word classification. This incremental update of counting only happens for target words, but not distractors, which explains why post-corruption targets show strong mid-layer effects but no early-layer effect while distractors show minimal effects; and (3) **Late-layer information routing and prediction (layers 30-80)** where attention mechanisms (particularly around layer 30-35) transfer the accumulated count information from word positions to the final token position for next-token prediction, as evidenced by (a) the concentrated attention effects, (b) strong late-layer residual stream effects at the final token, and (c) minimal late-layer residual stream effects for the word list. This mechanism demonstrates that large language models implement counting through a sophisticated pipeline that combines parallel word classification with selective state updating, followed by attention-mediated information aggregation—rather than simple batch processing or position-independent feature detection.
 
 The computation mechnism is likely to be something like this:
 ```
 Input Classification → Running Count Update → Final Aggregation → Output
-    (layers 0-25)        (layers 25-45)        (layers 45-65)
+    (layers 0-20)        (layers 20-35)        (layers 30-80)
 ```
